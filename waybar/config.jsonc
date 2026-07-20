@@ -1,0 +1,41 @@
+[{
+    "style": "~/.config/waybar/style.css",
+    "include": "~/.config/waybar/modules.jsonc",
+    "reload_style_on_change": true,
+
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "margin": "8 8 -12 8",
+    "name": "waybar",
+
+    "fixed-center": "true",
+
+    "modules-left": [
+        "custom/menu",
+        "custom/apps",
+        "custom/terminal",
+        "custom/code",
+        "hyprland/workspaces",
+
+        "custom/discord",
+        "custom/discord_icon"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/recording"
+    ],
+    "modules-right": [
+        "custom/media_icon",
+
+        "custom/media_prev",
+        "custom/media_pause",
+        "custom/media_next",
+
+        "custom/media",
+
+        "network",
+        "pulseaudio",
+        "custom/power"
+    ]
+}]

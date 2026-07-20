@@ -1,0 +1,160 @@
+{
+    // modules-left
+
+    "custom/menu": {
+        "format": "󰣇",
+        "tooltip": false,
+        "menu": "on-click",
+	"on-click-right": "hyprctl dispatch togglespecialworkspace special",
+
+        // configuration for the menu is in menu.xml, including the available actions
+        "menu-file": "$HOME/.config/waybar/menus/menu.xml",
+        // xml retuns one of the following actions, which is mapped to a shell command
+        "menu-actions": {
+            "documents": "$fileManager $HOME/Documents",
+            "downloads": "$fileManager $HOME/Downloads",
+            "projects": "$fileManager $HOME/Documents/Projects",
+            "config": "$fileManager $HOME/.config",
+
+            "windows": "$fileManager /mnt/win/Users/naiquire",
+            "win-documents": "$fileManager /mnt/win/Users/naiquire/Documents/General",
+
+            "nvidia": "$fileManager /mnt/ext/Media/Recordings/NVIDIA",
+            "videos": "$fileManager /mnt/ext/Media"
+        }
+    },
+
+    // app launcher
+    "custom/apps": {
+        "format": "",
+        "tooltip": false,
+        // $menu is an environment variable which is mapped to [ rofi -show drun ]
+        "on-click": "$menu"
+    },
+
+    // terminal launcher
+    "custom/terminal": {
+        "format": "",
+        "tooltip": false,
+        // $terminal is an environment variable which is mapped to [ kitty ]
+        "on-click": "$terminal"
+    },
+
+    // vs code
+    "custom/code": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "code"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "\udb81\udc3e",
+            "default": "\udb81\udc3d"
+        },
+        "persistent-workspaces": {
+             "*": 3
+        }
+    },
+
+
+    // modules-center
+
+    "custom/discord": {
+        "exec": "hyprctl clients -j | jq -r '.[] | select(.class | test(\"(?i)discord\")) | .title' | head -n1",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/discord_icon": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch togglespecialworkspace $comms"
+    },
+
+    "clock": {
+        "format-alt": "{:%A %d %B %Y}",
+        "tooltip": false
+    },
+    "custom/recording": {
+        "exec": "$HOME/.config/waybar/scripts/wf-recorder.sh",
+        "interval": 1,
+        "signal": 8,
+        "on-click": "$HOME/.config/hypr/scripts/record.sh"
+    },
+
+    
+    // modules-right
+
+    "custom/media_icon": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch togglespecialworkspace $music"
+    },
+    "custom/media_prev": {
+        "format": "󰒮",
+        "tooltip": false,
+        "on-click": "playerctl --player=spotify previous"
+    },
+    "custom/media_pause": {
+        "tooltip": false,
+
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/spotify/play-pause.sh",
+        "on-click": "playerctl --player=spotify play-pause"
+    },
+    "custom/media_next": {
+        "format": "󰒭",
+        "tooltip": false,
+        "on-click": "playerctl --player=spotify next"
+    },
+    "custom/media": {
+        "tooltip": false,
+
+        // get the current title from only spotify
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/spotify/change-track.sh"
+    },
+
+    "network": {
+        "format-wifi": "󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
+        "format-alt": "{icon} {essid} {ipaddr}",
+        "format-disconnected": "⚠ Disconnected",
+        "format-icons": {
+            "default": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+        },
+        // TODO ~ disconnected alt text
+        "tooltip": false,
+        "interval": 1
+    },
+    
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "scroll-step": 1,
+        // @DEFAULT_SINK@ is part of pactl
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+	"on-click-middle": "easyeffects"
+    },
+
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+
+        // configuration for the power options is in power.xml, including the available actions
+        "menu-file": "/home/naiquire/.config/waybar/menus/power.xml",
+        // xml retuns one of the following actions, which is mapped to a shell command
+        "menu-actions": {
+            "shutdown": "shutdown now",
+            "restart": "shutdown -r now",
+            "sleep": "systemctl suspend",
+            "lock": ""
+        }
+    }
+}

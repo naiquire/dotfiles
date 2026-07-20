@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- the <id> tag matches the mappings in modules.jsonc -->
+<!-- the <label> tag is the value displayed in the menu -->
+
+<interface>
+    <object class="GtkMenu" id="menu">
+        <child>
+            <object class="GtkMenuItem" id="documents">
+                <property name="label">󰈙 Documents</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="downloads">
+                <property name="label">󰇚 Downloads</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="projects">
+                <property name="label"> Projects</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="config">
+                <property name="label"> Config</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkSeparatorMenuItem" id="delimiter1" />
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="windows">
+                <property name="label"> Windows</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="win-documents">
+                <property name="label">󰈙 Documents</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkSeparatorMenuItem" id="delimiter2" />
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="nvidia">
+                <property name="label">󰑋 NVIDIA</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="videos">
+                <property name="label"> Videos</property>
+            </object>
+        </child>
+    </object>
+</interface>
