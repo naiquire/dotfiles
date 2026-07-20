@@ -1,14 +1,14 @@
-*.tar
-*.tar.*
-*.jar
-*.exe
-*.msi
-*.deb
-*.zip
-*.tgz
-*.log
-*.log.*
-*.sig
+*
+!.gitignore
 
-pkg/
-src/
+!/hypr/
+!/hypr/**
+
+!/kitty/
+!/kitty/**
+
+!/matugen/
+!/matugen/**
+
+!/waybar/
+!/waybar/**
