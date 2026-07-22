@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # track state for waybar updates
-STATE_FILE="/tmp/wf-recorder-start"
+STATE_FILE="/home/naiquire/.config/hypr/.cache/wf-recorder"
 
 # toggle wf-recorder
 if pgrep -x wf-recorder >/dev/null; then
@@ -9,7 +9,7 @@ if pgrep -x wf-recorder >/dev/null; then
     rm -f "$STATE_FILE"
 else
     date +%s > "$STATE_FILE"
-    wf-recorder -r 60 --audio --codec h264_nvenc -f "$HOME/Videos/$(date +"%H%M-%d%m%y").mp4"
+    wf-recorder -r 60 --audio="$(pactl get-default-sink).monitor" --codec h264_nvenc -f "$HOME/Videos/$(date +"%y%m%d-%H%M").mp4"
 fi
 
 # refresh waybar

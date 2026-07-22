@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STATE_FILE="/tmp/wf-recorder-start"
+STATE_FILE="/home/naiquire/.config/hypr/.cache/wf-recorder"
 
 if pgrep -x wf-recorder >/dev/null; then
     if [ -f "$STATE_FILE" ]; then
