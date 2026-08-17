@@ -20,7 +20,7 @@ set = true
 # The base command to run for applying the wallpaper.
 # Keywords like {{ image }} or anything that works inside of hooks works here.
 # You could also set a static color if you use the color keywords and the wallpaper setter supports it.
-command = "awww img --transition-type center {{ image }}"
+command = "awww img --transition-type wipe {{ image }}"
 
 # For example, killing the wallpaper daemon. Usage is like a normal hook.
 # pre_hook = ""
@@ -29,6 +29,10 @@ command = "awww img --transition-type center {{ image }}"
 # input_path = "./include.txt"
 # The output path is optional if you just want to import the template anyways.
 # output_path = "./a/include.txt"
+
+[templates.hypr]
+input_path = "./templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/hypr-theme.conf"
 
 [templates.btop]
 input_path = "./templates/btop.theme"
@@ -50,10 +54,18 @@ output_path = "~/.config/dunst/dunstrc"
 input_path = "./templates/steam.css"
 output_path = "~/.steam/steam/millennium/themes/Material-Theme/css/main/colors/matugen.css"
 
+# VS Code matugen extension
+[templates.vscode-raw]
+input_path = './templates/vscode-colors'
+output_path = '~/.cache/matugen/vscode-colors'
+
+[templates.vscode-json]
+input_path = './templates/vscode-colors.json'
+output_path = '~/.cache/matugen/vscode-colors.json'
 
 # Defaults to the type from CLI if unspecified.
 # One of `SchemeContent`, `SchemeExpressive`, `SchemeFidelity`, `SchemeFruitSalad`, `SchemeMonochrome`, `SchemeNeutral`, `SchemeRainbow`, `SchemeTonalSpot`, `SchemeVibrant`
-type = "SchemeVibrant"
+# type = ""
 
 # For testing of the `--continue-on-error` flag
 # [templates.ishoulderror]

@@ -125,7 +125,8 @@
         },
         // TODO ~ disconnected alt text
         "tooltip": false,
-        "interval": 1
+        "interval": 1,
+	"on-click-right": "kitty iwctl"
     },
     
     "pulseaudio": {
