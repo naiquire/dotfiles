@@ -73,8 +73,7 @@
     },
 
     "clock": {
-        "format-alt": "{:%A %d %B %Y}",
-        "tooltip": false
+        "tooltip-format": "{:%A %d %B %Y}"
     },
     "custom/recording": {
         "exec": "$HOME/.config/waybar/scripts/wf-recorder.sh",
@@ -117,15 +116,14 @@
     },
 
     "network": {
-        "format-wifi": "󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
-        "format-alt": "{icon} {essid} {ipaddr}",
-        "format-disconnected": "⚠ Disconnected",
+        "format-wifi": "{icon} {essid}",
+        "format-disconnected": "󰤮",
         "format-icons": {
             "default": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
         },
         // TODO ~ disconnected alt text
         "tooltip": false,
-        "interval": 1,
+        "interval": 30,
 	"on-click-right": "kitty iwctl"
     },
     
@@ -137,10 +135,17 @@
             "default": ["", "", ""]
         },
         "scroll-step": 1,
-        // @DEFAULT_SINK@ is part of pactl
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pavucontrol",
-	"on-click-middle": "easyeffects"
+        "on-click-right": "pavucontrol"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "tooltip-format": "{time}",
+
+        "format-icons": {
+            "default": ["", "", "", "", ""]
+        }
     },
 
     "custom/power": {
@@ -149,13 +154,13 @@
         "menu": "on-click",
 
         // configuration for the power options is in power.xml, including the available actions
-        "menu-file": "/home/naiquire/.config/waybar/menus/power.xml",
+        "menu-file": "$HOME/.config/waybar/menus/power.xml",
         // xml retuns one of the following actions, which is mapped to a shell command
         "menu-actions": {
-            "shutdown": "shutdown now",
+            "shutdown": "poweroff",
             "restart": "shutdown -r now",
             "sleep": "systemctl suspend",
-            "lock": ""
+            "hibernate": "systemctl hibernate"
         }
     }
 }

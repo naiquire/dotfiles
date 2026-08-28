@@ -1,5 +1,4 @@
 
-
 * {
     font-size: 14px;
     font-weight: 600;
@@ -11,21 +10,34 @@ window#waybar.waybar {
     border: none;
     background-color: transparent;
 }
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: rgba(27, 27, 37, 0.38);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-top-color: rgba(255, 255, 255, 0.30);
+
+    border-radius: 16px;
+
+    box-shadow:
+        inset 0px 1px 0px rgba(255, 255, 255, 0.10),
+        inset 0px -1px 0px rgba(255, 255, 255, 0.03),
+        0px 4px 12px rgba(0, 0, 0, 0.20);
+}
+
 .modules-left {
-    background-color: rgba(27,27,37,0.8);
-    border-radius: 12px;
     padding-right: 12px;
 }
+
 .modules-center {
-    background-color: rgba(27,27,37,0.8);
-    border-radius: 12px;
-    padding: 0px 0px;
+    padding: 0px;
 }
+
 .modules-right {
-    background-color: rgba(27,27,37,0.8);
-    border-radius: 12px;
     padding-left: 12px;
 }
+
 
 menu {
     color: transparent;
@@ -55,75 +67,59 @@ menuitem:hover {
 }
 
 #custom-apps {
-    margin-left: 12px;
-    margin-right: 0px;
-    background-color: rgba(255,255,255,0.07);
+    margin: 2px 0px 2px 12px;
     padding: 0px 6px 0px 12px;
     border-radius: 12px 0px 0px 12px;
     color: white;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow:
+        inset 0px 1px 0px rgba(255, 255, 255, 0.08);
 }
 #custom-apps:hover {
     color: white;
 }
 
 #custom-terminal {
-    margin-left: 0px;
-    margin-right: 0px;
-    background-color: rgba(255,255,255,0.07);
+    margin: 2px 0px 2px 0px;
     padding: 0px 6px;
     color: white;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow:
+        inset 0px 1px 0px rgba(255, 255, 255, 0.08);
 }
 #custom-terminal:hover {
     color: white;
 }
 
 #custom-code {
-    margin-left: 0px;
-    margin-right: 0px;
-    background-color: rgba(255,255,255,0.07);
+    margin: 2px 0px 2px 0px;
     padding: 0px 12px 0px 6px;
     border-radius: 0px 12px 12px 0px;
     color: white;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.08);
 }
 #custom-code:hover {
     color: white;
 }
 
 #workspaces {
-    margin-left: 12px;
+    margin: 0px 0px 0px 12px;
 }
 #workspaces button {
     padding: 0px 2px;
     border: 0px;
 }
-/* #workspaces button:hover {
-    color: red;
-    background-color: red;
-}
-#workspaces button.active:hover {
-    color: red;
-    background-color: red;
-}
-#workspaces button.visible:hover {
-    color: red;
-    background-color: red;
-}
-#workspaces button.urgent:hover {
-    color: red;
-    background-color: red;
-}
-#workspaces button.empty:hover {
-    color: red;
-    background-color: red;
-}
-#workspaces button.persistent:hover {
-    color: red;
-    background-color: red;
-} */
 
 
 #custom-discord {
-    margin-left: 12px;
+    margin: 0px 0px 0px 12px;
     padding: 0px 12px;
     background-color: rgba(255,255,255,0.07);
     border-radius: 12px;
@@ -138,14 +134,19 @@ menuitem:hover {
 /* modules-center */
 
 #clock {
-    background-color: rgba(255,255,255,0.07);
     padding: 0px 12px;
     min-width: 100px;
     border-radius: 12px;
 }
 #custom-recording {
+    margin: 2px 6px 2px 0px;
     padding: 0px 12px;
     color: white;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
 }
 
 
@@ -181,36 +182,48 @@ menuitem:hover {
     color: white;
 }
 #custom-media {
-    margin: 0px 12px 0px 6px;
-    padding: 0px 12px;
-    background-color: rgba(255,255,255,0.07);
-    border-radius: 12px;
-}
-
-#network {
-    margin-right: 12px;
-    border-radius: 12px;
-    min-width: 200px;
-}
-
-#pulseaudio {
-    margin-right: 12px;
-    background-color: rgba(255,255,255,0.07);
+    margin: 2px 12px 2px 6px;
     padding: 0px 12px;
     border-radius: 12px;
     color: white;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.08);
+}
+
+#network {
+    margin: 0px 12px 0px 0px;
+    border-radius: 12px;
+    min-width: 100px;
+}
+
+#pulseaudio {
+    margin: 2px 0px 2px 0px;
+    padding: 0px 24px 0px 12px;
+    border-radius: 12px 0px 0px 12px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.08);
+}
+
+#battery {
+    margin: 2px 12px 2px 0px;
+    padding: 0px 12px 0px 0px;
+    border-radius: 0px 12px 12px 0px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.08);
 }
 
 #custom-power {
-    margin-right: 12px;
-    margin-left: 6px;
+    margin: 0px 12px 0px 6px;
     color: white;
 }
 #custom-power:hover {
     color: white;
 }
-
-
-
-
-

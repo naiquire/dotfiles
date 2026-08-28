@@ -5,8 +5,8 @@
 
     "layer": "top",
     "position": "top",
-    "height": 32,
-    "margin": "8 8 -12 8",
+    "height": 40,
+    "margin": "8 8 0 8",
     "name": "waybar",
 
     "fixed-center": "true",
@@ -36,6 +36,7 @@
 
         "network",
         "pulseaudio",
+        "battery",
         "custom/power"
     ]
 }]
