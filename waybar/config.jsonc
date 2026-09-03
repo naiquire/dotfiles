@@ -13,6 +13,7 @@
 
     "modules-left": [
         "custom/menu",
+        "clock",
         "custom/apps",
         "custom/terminal",
         "custom/code",
@@ -22,7 +23,6 @@
         "custom/discord_icon"
     ],
     "modules-center": [
-        "clock",
         "custom/recording"
     ],
     "modules-right": [

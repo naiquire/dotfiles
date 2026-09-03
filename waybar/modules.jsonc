@@ -79,7 +79,7 @@
         "exec": "$HOME/.config/waybar/scripts/wf-recorder.sh",
         "interval": 1,
         "signal": 8,
-        "on-click": "$HOME/.config/hypr/scripts/record.sh"
+        "on-right-click": "$HOME/.config/hypr/scripts/record.sh"
     },
 
     

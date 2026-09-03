@@ -9,7 +9,7 @@ if pgrep -x wf-recorder >/dev/null; then
     rm -f "$STATE_FILE"
 else
     date +%s > "$STATE_FILE"
-    wf-recorder -r 60 --audio="$(pactl get-default-sink).monitor" --codec h264_nvenc -f "$HOME/Videos/$(date +"%y%m%d-%H%M").mp4"
+    wf-recorder -r 60 --audio="$(pactl get-default-sink).monitor" -f "$HOME/Videos/$(date +"%y%m%d-%H%M").mp4"
 fi
 
 # refresh waybar
