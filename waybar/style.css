@@ -183,7 +183,7 @@ menuitem:hover {
     color: white;
 }
 #custom-media {
-    margin: 2px 12px 2px 6px;
+    margin: 2px 0px 2px 0px;
     padding: 0px 12px;
     border-radius: 12px;
     color: white;
@@ -194,13 +194,14 @@ menuitem:hover {
 }
 
 #network {
-    margin: 0px 12px 0px 0px;
+    margin: 0px 0px 0px 6px;
+    padding: 0px 12px;
     border-radius: 12px;
-    min-width: 100px;
+    /* min-width: 100px; */
 }
 
 #pulseaudio {
-    margin: 2px 0px 2px 0px;
+    margin: 2px 0px 2px 12px;
     padding: 0px 24px 0px 12px;
     border-radius: 12px 0px 0px 12px;
     color: white;
@@ -211,7 +212,7 @@ menuitem:hover {
 }
 
 #battery {
-    margin: 2px 12px 2px 0px;
+    margin: 2px 0px 2px 0px;
     padding: 0px 12px 0px 0px;
     border-radius: 0px 12px 12px 0px;
     color: white;
@@ -222,7 +223,7 @@ menuitem:hover {
 }
 
 #custom-power {
-    margin: 0px 12px 0px 6px;
+    margin: 0px 18px 0px 12px;
     color: white;
 }
 #custom-power:hover {

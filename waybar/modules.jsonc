@@ -5,7 +5,7 @@
         "format": "󰣇",
         "tooltip": false,
         "menu": "on-click",
-	"on-click-right": "hyprctl dispatch togglespecialworkspace special",
+	    "on-click-right": "hyprctl dispatch togglespecialworkspace special",
 
         // configuration for the menu is in menu.xml, including the available actions
         "menu-file": "$HOME/.config/waybar/menus/menu.xml",
@@ -88,7 +88,7 @@
     "custom/media_icon": {
         "format": "",
         "tooltip": false,
-        "on-click": "hyprctl dispatch togglespecialworkspace $music"
+        "on-click": "hyprctl dispatch togglespecialworkspace music"
     },
     "custom/media_prev": {
         "format": "󰒮",
@@ -116,12 +116,12 @@
     },
 
     "network": {
+        "format": "",
         "format-wifi": "{icon} {essid}",
         "format-disconnected": "󰤮",
         "format-icons": {
             "default": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
         },
-        // TODO ~ disconnected alt text
         "tooltip": false,
         "interval": 30,
 	"on-click-right": "kitty iwctl"
@@ -141,15 +141,25 @@
 
     "battery": {
         "format": "{icon} {capacity}%",
-        "tooltip-format": "{time}",
-
+        "format-alt": "{time}",
         "format-icons": {
             "default": ["", "", "", "", ""]
+        },
+        "tooltip": false,
+        "menu": "on-click-right",
+
+        // configuration for the power options is in power.xml, including the available actions
+        "menu-file": "$HOME/.config/waybar/menus/battery.xml",
+        // xml retuns one of the following actions, which is mapped to a shell command
+        "menu-actions": {
+            "power-saver": "powerprofilesctl set power-saver",
+            "balanced": "powerprofilesctl set balanced",
+            "performance": "powerprofilesctl set performance"
         }
     },
 
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : "⏻",
         "tooltip": false,
         "menu": "on-click",
 
