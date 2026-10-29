@@ -11,7 +11,7 @@ window#waybar.waybar {
     background-color: transparent;
 }
 .modules-left,
-.modules-center,
+/* .modules-center, */
 .modules-right {
     background-color: rgba(27, 27, 37, 0.38);
 
@@ -159,7 +159,7 @@ menuitem:hover {
     font-size: 18px;
 }
 #custom-media_prev {
-    padding: 0px 6px;
+    padding: 1px 6px 0px 6px;
     font-size: 20px;
     color: white;
 }
@@ -167,7 +167,7 @@ menuitem:hover {
     color: white;
 }
 #custom-media_pause {
-    padding: 0px 6px;
+    padding: 1px 6px 0px 6px;
     font-size: 20px;
     color: white;
 }
@@ -175,7 +175,7 @@ menuitem:hover {
     color: white;
 }
 #custom-media_next {
-    padding: 0px 6px;
+    padding: 1px 6px 0px 6px;
     font-size: 20px;
     color: white;
 }
@@ -183,7 +183,7 @@ menuitem:hover {
     color: white;
 }
 #custom-media {
-    margin: 2px 0px 2px 0px;
+    margin: 2px 0px 2px 12px;
     padding: 0px 12px;
     border-radius: 12px;
     color: white;
@@ -194,7 +194,7 @@ menuitem:hover {
 }
 
 #network {
-    margin: 0px 0px 0px 6px;
+    margin: 0px 0px 0px 12px;
     padding: 0px 12px;
     border-radius: 12px;
     /* min-width: 100px; */
@@ -223,7 +223,8 @@ menuitem:hover {
 }
 
 #custom-power {
-    margin: 0px 18px 0px 12px;
+    margin: 0px 6px 0px 12px;
+    padding: 0px 12px 0px 6px;
     color: white;
 }
 #custom-power:hover {

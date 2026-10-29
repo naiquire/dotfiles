@@ -12,3 +12,6 @@
 
 !/waybar/
 !/waybar/**
+
+!/rofi/
+!/rofi/**

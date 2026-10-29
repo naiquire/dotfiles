@@ -1,11 +1,11 @@
 return {
-    image = "/home/naiquire/Pictures/Wallpapers/wp15865977-chainsaw-man-the-movie-reze-arc-wallpapers.jpg",
+    image = "/home/naiquire/Pictures/Wallpapers/wp12863971-lycoris-recoil-4k-wallpapers.jpg",
 
-    background = "0xff15130b",
+    background = "0xff0e1415",
 
-    blue = "0xfff5edff",
+    blue = "0xffecefff",
 
-    blue_container = "0xffcab9fa",
+    blue_container = "0xffaac2fd",
 
     blue_source = "0xff0000ff",
 
@@ -15,9 +15,9 @@ return {
 
     error_container = "0xffffaea4",
 
-    green = "0xffe0faaa",
+    green = "0xffbeffcf",
 
-    green_container = "0xffb3cc81",
+    green_container = "0xff91d1a4",
 
     green_source = "0xff00ff00",
 
@@ -25,11 +25,11 @@ return {
 
     inverse_on_surface = "0xff000000",
 
-    inverse_primary = "0xff544700",
+    inverse_primary = "0xff005056",
 
-    inverse_surface = "0xffe8e2d4",
+    inverse_surface = "0xffdee4e4",
 
-    on_background = "0xffe8e2d4",
+    on_background = "0xffdee4e4",
 
     on_blue = "0xff000000",
 
@@ -49,7 +49,7 @@ return {
 
     on_primary_fixed = "0xff000000",
 
-    on_primary_fixed_variant = "0xff151100",
+    on_primary_fixed_variant = "0xff001416",
 
     on_red = "0xff000000",
 
@@ -61,7 +61,7 @@ return {
 
     on_secondary_fixed = "0xff000000",
 
-    on_secondary_fixed_variant = "0xff151100",
+    on_secondary_fixed_variant = "0xff001416",
 
     on_surface = "0xffffffff",
 
@@ -73,19 +73,19 @@ return {
 
     on_tertiary_fixed = "0xff000000",
 
-    on_tertiary_fixed_variant = "0xff001509",
+    on_tertiary_fixed_variant = "0xff00102b",
 
-    outline = "0xfff7efdd",
+    outline = "0xffe8f2f3",
 
-    outline_variant = "0xffc9c2b1",
+    outline_variant = "0xffbac4c5",
 
-    primary = "0xfffff0b6",
+    primary = "0xffc3faff",
 
-    primary_container = "0xffd6c36b",
+    primary_container = "0xff7cd0d8",
 
-    primary_fixed = "0xfff7e388",
+    primary_fixed = "0xff9df0f8",
 
-    primary_fixed_dim = "0xffdac76f",
+    primary_fixed_dim = "0xff80d4dc",
 
     red = "0xffffece5",
 
@@ -97,44 +97,44 @@ return {
 
     scrim = "0xff000000",
 
-    secondary = "0xfffbf0c9",
+    secondary = "0xffdaf5f8",
 
-    secondary_container = "0xffcdc39e",
+    secondary_container = "0xffadc8ca",
 
-    secondary_fixed = "0xffede2bc",
+    secondary_fixed = "0xffcce8ea",
 
-    secondary_fixed_dim = "0xffd1c6a2",
+    secondary_fixed_dim = "0xffb1cbce",
 
     shadow = "0xff000000",
 
-    source_color = "0xffc3b058",
+    source_color = "0xff719a9e",
 
-    surface = "0xff15130b",
+    surface = "0xff0e1415",
 
-    surface_bright = "0xff535046",
+    surface_bright = "0xff4b5152",
 
-    surface_container = "0xff333027",
+    surface_container = "0xff2b3232",
 
-    surface_container_high = "0xff3e3b32",
+    surface_container_high = "0xff363d3d",
 
-    surface_container_highest = "0xff4a473d",
+    surface_container_highest = "0xff424848",
 
-    surface_container_low = "0xff222017",
+    surface_container_low = "0xff1a2121",
 
     surface_container_lowest = "0xff000000",
 
-    surface_dim = "0xff15130b",
+    surface_dim = "0xff0e1415",
 
-    surface_tint = "0xffdac76f",
+    surface_tint = "0xff80d4dc",
 
-    surface_variant = "0xff4b4739",
+    surface_variant = "0xff3f4849",
 
-    tertiary = "0xffd2fadc",
+    tertiary = "0xffebf0ff",
 
-    tertiary_container = "0xffa5ccb0",
+    tertiary_container = "0xffb3c3e6",
 
-    tertiary_fixed = "0xffc4eccf",
+    tertiary_fixed = "0xffd7e2ff",
 
-    tertiary_fixed_dim = "0xffa9d0b4",
+    tertiary_fixed_dim = "0xffb7c7ea",
 
 }

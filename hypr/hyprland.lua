@@ -1,10 +1,19 @@
 local theme = require("hyprland-colors")
 
 hl.monitor({
-    output  = "eDP-1",
-    mode    = "2880x1800@60",
-    scale   = 2
+    output      = "eDP-1",
+    mode        = "2880x1800@120",
+    scale       = 2,
+    disabled    = true
 })
+
+hl.monitor({
+    output  	= "DP-1",
+    mode 		= "1920x1080@144",
+    scale   	= 1,
+    disabled 	= false
+})
+
 
 local terminal      = "kitty"
 local fileManager   = "thunar"
@@ -12,7 +21,7 @@ local menu          = "rofi -show drun"
 local browser       = "firefox"
 local editor        = "code"
 local music         = "Spotify"
-local comms         = "vesktop"
+local comms         = "discord"
 
 hl.on("hyprland.start", function () 
     hl.exec_cmd("awww-daemon")
@@ -20,6 +29,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"")
     hl.exec_cmd("hyprsunset")
+    
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("waybar")
 end)
@@ -139,13 +149,18 @@ hl.config({
         },
 
         tablet = {
-            output = "eDP-1",
+            output = "DP-1",
             absolute_region_position = true,
 
             active_area_size = {64, 36},
             active_area_position = {20, 10}
         }
-    }
+    }    
+})
+
+hl.device({
+    name = "wacom-one-by-wacom-s-pen",
+    scroll_button = 0,
 })
 
 hl.gesture({
@@ -197,6 +212,10 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
+-- monitor toggles
+hl.bind(mainMod .. " + SPACE",	hl.dsp.dpms({ action = "toggle", monitor = "eDP-1" }))
+hl.bind(altMod .. " + SPACE",	hl.dsp.dpms({ action = "toggle", monitor = "DP-1" }))
+
 for i = 1, 10 do
     local key = i % 10
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
@@ -228,7 +247,11 @@ hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_S
 hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl set 5%+"),                  { locked = true })
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl set 5%-"),                  { locked = true })
 
+hl.bind("XF86AudioPlay",        hl.dsp.exec_cmd("playerctl --player=spotify play-pause"))
 hl.bind("XF86Launch7",          hl.dsp.exec_cmd("playerctl --player=spotify play-pause"))
+hl.bind("XF86AudioPrev",	hl.dsp.exec_cmd("playerctl --player=spotify previous"))
+hl.bind("XF86AudioNext",	hl.dsp.exec_cmd("playerctl --player=spotify next"))
+
 hl.bind(altMod .. " + left",    hl.dsp.exec_cmd("playerctl --player=spotify previous"))
 hl.bind(altMod .. " + right",   hl.dsp.exec_cmd("playerctl --player=spotify next"))
 hl.bind(altMod .. " + up",      hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"))
@@ -250,11 +273,6 @@ hl.bind(altMod .. " + S", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/steam.sh")
 
 -- window rules
 
-hl.window_rule({
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
-    suppress_event = "maximize"
-})
 
 hl.window_rule({
     name  = "fix-xwayland-drags",
@@ -324,8 +342,8 @@ hl.window_rule({
 })
 
 hl.layer_rule({
-    name = "waybar",
-    match = { namespace = "waybar" },
+    name = "blue",
+    match = { namespace = "waybar|rofi" },
     blur = true,
     ignore_alpha = 0.2
 })

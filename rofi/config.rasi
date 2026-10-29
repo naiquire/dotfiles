@@ -1,0 +1,134 @@
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "";
+	drun-display-format:        "{name}";
+}
+
+@import                          "shared/colors.rasi"
+@import                          "shared/fonts.rasi"
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       750px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               12px;
+    border-color:                @primary-container;
+    background-color:            black / 50%;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     20px;
+    margin:                      0px;
+    padding:                     20px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     12px;
+    padding:                     8px;
+    border:                      1px solid;
+    border-radius:               12px;
+    border-color:                @secondary-container;
+    background-color:            white / 5%;
+    text-color:                  @secondary;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+	margin:						 2px 0px 0px 0px;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       10;
+    cycle:                       false;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px 0px;
+    border:                      0px solid;
+	border-radius:				 12px;
+    background-color:            transparent;
+    text-color:                  @tertiary;
+    orientation:                 horizontal;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @tertiary;
+}
+element alternate.normal {
+	background-color:            transparent;
+    text-color:                  @tertiary;
+}
+element selected.normal {
+    background-color:            white / 5%;
+    text-color:                  @tertiary;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+	padding:					 4px 12px 4px 4px;
+    cursor:                      inherit;
+	vertical-align:				 0.5;
+	horizontal-align:			 0;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0;
+}
+

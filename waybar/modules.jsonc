@@ -5,7 +5,7 @@
         "format": "󰣇",
         "tooltip": false,
         "menu": "on-click",
-	    "on-click-right": "hyprctl dispatch togglespecialworkspace special",
+	    "on-click-right": "hyprctl dispatch \"hl.dsp.workspace.toggle_special(\\\"special\\\")\"",
 
         // configuration for the menu is in menu.xml, including the available actions
         "menu-file": "$HOME/.config/waybar/menus/menu.xml",
@@ -52,9 +52,6 @@
         "format-icons": {
             "active": "\udb81\udc3e",
             "default": "\udb81\udc3d"
-        },
-        "persistent-workspaces": {
-             "*": 3
         }
     },
 
@@ -62,14 +59,14 @@
     // modules-center
 
     "custom/discord": {
-        "exec": "hyprctl clients -j | jq -r '.[] | select(.class | test(\"(?i)discord\")) | .title' | head -n1",
+        "exec": "hyprctl clients -j | jq -r '.[] | select(.class | test(\"(?i)discord\")) | .title' | grep -oP '^.*(?= - Discord$)'",
         "interval": 1,
         "tooltip": false
     },
     "custom/discord_icon": {
         "format": "",
         "tooltip": false,
-        "on-click": "hyprctl dispatch togglespecialworkspace $comms"
+        "on-click": "hyprctl dispatch \"hl.dsp.workspace.toggle_special(\\\"discord\\\")\""
     },
 
     "clock": {
@@ -88,7 +85,7 @@
     "custom/media_icon": {
         "format": "",
         "tooltip": false,
-        "on-click": "hyprctl dispatch togglespecialworkspace music"
+        "on-click": "hyprctl dispatch \"hl.dsp.workspace.toggle_special(\\\"Spotify\\\")\""
     },
     "custom/media_prev": {
         "format": "󰒮",
@@ -118,13 +115,14 @@
     "network": {
         "format": "",
         "format-wifi": "{icon} {essid}",
+        "format-ethernet": " Connected",
         "format-disconnected": "󰤮",
         "format-icons": {
             "default": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
         },
         "tooltip": false,
         "interval": 30,
-	"on-click-right": "kitty iwctl"
+	"on-click-right": "kitty nmtui"
     },
     
     "pulseaudio": {

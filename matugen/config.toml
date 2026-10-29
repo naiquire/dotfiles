@@ -30,10 +30,6 @@ command = "awww img --transition-type wipe {{ image }}"
 # The output path is optional if you just want to import the template anyways.
 # output_path = "./a/include.txt"
 
-[templates.hyprlang]
-input_path = "./templates/hyprland-colors.conf"
-output_path = "~/.config/hypr/hypr-colors.conf"
-
 [templates.hyprlua]
 input_path = "./templates/hyprland-colors.lua"
 output_path = "~/.config/hypr/hyprland-colors.lua"
@@ -53,6 +49,10 @@ output_path = "~/.config/kitty/kitty-colors.conf"
 [templates.dunst]
 input_path = "./templates/dunstrc-colors"
 output_path = "~/.config/dunst/dunstrc"
+
+[templates.rofi]
+input_path = "./templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/colors/rofi-colors.rasi"
 
 # [templates.millennium]
 # input_path = "./templates/steam.css"
