@@ -1,0 +1,22 @@
+local vars = require("variables")
+
+hl.on("hyprland.start", function () 
+    hl.exec_cmd("awww-daemon")
+    hl.exec_cmd("dunst")
+    hl.exec_cmd("fcitx5 -d")
+    hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"")
+    hl.exec_cmd("hyprsunset")
+    
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("waybar")
+end)
+
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("fileManager", vars.fileManager)
+hl.env("menu", vars.menu)
+hl.env("terminal", vars.terminal)
+hl.env("comms", vars.comms)
+hl.env("music", vars.music)
+hl.env("QT_IM_MODULE", "fcitx")
+hl.env("XMODIFIERS", "@im=fcitx")

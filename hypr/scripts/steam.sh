@@ -41,7 +41,7 @@ fi
 
 selected=$(
     cut -d'|' -f2 "$CACHE" |
-    rofi -dmenu -i -p "Launch"
+    rofi -dmenu -i -p ""
 )
 
 [ -n "$selected" ] || exit 0
